@@ -3,60 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yjlnp041231 的背部训练日</title>
+    <title>yjlnp041231 的 V型背部日</title>
     <style>
-        :root { --main-blue: #3498db; --dark-bg: #121212; }
-        body { font-family: sans-serif; background-color: var(--dark-bg); color: #eee; margin: 0; padding: 20px; }
-        h1 { color: var(--main-blue); text-align: center; text-transform: uppercase; letter-spacing: 2px; }
-        .stats { text-align: center; font-size: 14px; color: #888; margin-bottom: 25px; }
-        .card { background: #1e1e1e; border-radius: 12px; padding: 18px; margin-bottom: 15px; border-top: 4px solid var(--main-blue); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-        h3 { margin-top: 0; color: #fff; display: flex; justify-content: space-between; }
-        .reps { font-size: 14px; color: var(--main-blue); border: 1px solid var(--main-blue); padding: 2px 8px; border-radius: 20px; }
-        ul { padding-left: 18px; margin: 10px 0; }
-        li { margin-bottom: 8px; font-size: 15px; color: #ccc; }
-        .pro-tip { font-size: 13px; color: #f1c40f; font-style: italic; margin-top: 10px; display: block; }
-        .footer { text-align: center; font-size: 11px; color: #555; margin-top: 40px; border-top: 1px solid #333; padding-top: 10px; }
+        :root {
+            --primary-blue: #3498db; /* 沉稳、宽度的蓝色 */
+            --dark-bg: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-color: #eee;
+            --accent-yellow: #f1c40f;
+        }
+        body { font-family: -apple-system, sans-serif; background-color: var(--dark-bg); color: var(--text-color); margin: 0; padding: 15px; }
+        
+        /* 头部样式 */
+        .header { text-align: center; padding: 20px 0; border-bottom: 2px solid var(--primary-blue); margin-bottom: 20px; }
+        .header h1 { color: var(--primary-blue); margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .header p { font-size: 14px; color: #aaa; margin-top: 5px; }
+
+        /* 动作卡片 */
+        .exercise-card { background: var(--card-bg); border-radius: 12px; padding: 15px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .exercise-title { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #444; padding-bottom: 10px; margin-bottom: 15px; }
+        .exercise-title h3 { margin: 0; color: #fff; }
+        .reps-tag { background: var(--primary-blue); color: white; padding: 3px 10px; border-radius: 20px; font-size: 12px; }
+
+        /* 视频/图片区域 */
+        .media-placeholder { width: 100%; height: auto; border-radius: 10px; background: #222; margin-bottom: 15px; display: block; border: 2px solid #333; }
+        /* 下面是为你生成的背部动作演示图 */
+        .action-image { display: block; max-width: 100%; height: auto; border-radius: 8px; margin: 10px 0; }
+
+        /* 技术细节列表 */
+        .tech-details { padding-left: 20px; color: #ccc; }
+        .tech-details li { margin-bottom: 8px; font-size: 14px; }
+        .tech-details strong { color: var(--primary-blue); }
+
+        /* 专业提示 */
+        .pro-tip { background: #333; border-left: 4px solid var(--accent-yellow); padding: 10px; border-radius: 4px; font-size: 13px; color: #ddd; margin-top: 10px; }
+
+        /* 底部 */
+        .footer { text-align: center; font-size: 11px; color: #666; margin-top: 40px; padding: 15px 0; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
-    <h1>蓝调背部日 🛠️</h1>
-    <div class="stats">目标：打造 V 字型后背 | 状态：待激活</div>
 
-    <div class="card">
-        <h3>1. 引体向上 / 高位下拉 <span class="reps">4 组 x 10 次</span></h3>
-        <ul>
-            <li><strong>重点：</strong> 想象手肘往兜里插，不要用手死拽。</li>
-            <li><strong>感觉：</strong> 感受腋下两侧（背阔肌）的充分拉伸。</li>
-        </ul>
-        <span class="pro-tip">💡 提示：下拉到锁骨位置即可，不要含胸。</span>
+<div class="header">
+    <h1>V型背部日 🛠️</h1>
+    <p>身高 168cm | 体重 65kg | 目标：宽度与厚度兼顾</p>
+</div>
+
+<div class="exercise-card">
+    <div class="exercise-title">
+        <h3>1. 杠铃俯身划船</h3>
+        <span class="reps-tag">4 组 x 8-10 次</span>
     </div>
+    <img src="https://example.com/generated_assets/barbell_row_demonstration.jpg" alt="杠铃划船演示图" class="media-placeholder action-image">
+    <ul class="tech-details">
+        <li><strong>姿态：</strong> 俯身约 45 度，腰背挺直，核心收紧。</li>
+        <li><strong>发力：</strong> 肘关节带动杠铃向后上方划动。</li>
+        <li><strong>感受：</strong> 挤压肩胛骨，针对背部厚度。</li>
+    </ul>
+    <div class="pro-tip">💡 提示：不要靠身体前后晃动借力，杠铃轨迹贴近大腿。</div>
+</div>
 
-    <div class="card">
-        <h3>2. 杠铃/哑铃俯身划船 <span class="reps">4 组 x 12 次</span></h3>
-        <ul>
-            <li><strong>重点：</strong> 躯干稳定，大臂贴近身体向后划。</li>
-            <li><strong>感觉：</strong> 挤压肩胛骨，增加背部厚度。</li>
-        </ul>
-        <span class="pro-tip">💡 提示：腰背挺直，核心收紧，防止腰酸。</span>
+<div class="exercise-card">
+    <div class="exercise-title">
+        <h3>2. 高位下拉</h3>
+        <span class="reps-tag">4 组 x 10-12 次</span>
     </div>
+    <img src="https://example.com/generated_assets/lat_pulldown_demonstration.jpg" alt="高位下拉演示图" class="media-placeholder action-image">
+    <ul class="tech-details">
+        <li><strong>发力：</strong> 沉肩，想象用手肘插向两边的“侧兜”。</li>
+        <li><strong>控制：</strong> 下拉时吐气，回放时吸气并保持控制。</li>
+        <li><strong>感受：</strong> 充分激活腋下两侧（背阔肌）。</li>
+    </ul>
+    <div class="pro-tip">💡 提示：不要用力抓握把，手只是钩子。</div>
+</div>
 
-    <div class="card">
-        <h3>3. 坐姿划船 (器械) <span class="reps">3 组 x 15 次</span></h3>
-        <ul>
-            <li><strong>重点：</strong> 挺胸，松肩，向后拉时顶峰收缩 1 秒。</li>
-            <li><strong>感觉：</strong> 针对背部中缝，刻画细节。</li>
-        </ul>
-        <span class="pro-tip">💡 提示：不要靠身体前后晃动来借力。</span>
+<div class="exercise-card">
+    <div class="exercise-title">
+        <h3>3. 坐姿划船 (器械)</h3>
+        <span class="reps-tag">3 组 x 15 次</span>
     </div>
+    <img src="https://example.com/generated_assets/seated_row_demonstration.jpg" alt="坐姿划船演示图" class="media-placeholder action-image">
+    <ul class="tech-details">
+        <li><strong>发力：</strong> 挺胸，向后拉时顶峰收缩 1 秒。</li>
+        <li><strong>细节：</strong> 全程保持肩膀松、背部紧。</li>
+        <li><strong>感受：</strong> 刻画背部中缝细节。</li>
+    </ul>
+</div>
 
-    <div class="card">
-        <h3>4. 绳索直臂下压 <span class="reps">3 组 x 15 次</span></h3>
-        <ul>
-            <li><strong>重点：</strong> 肘关节微屈固定，半圆弧线压到大腿。</li>
-            <li><strong>感觉：</strong> 彻底榨干背阔肌余力。</li>
-        </ul>
+<div class="exercise-card">
+    <div class="exercise-title">
+        <h3>4. 绳索直臂下压</h3>
+        <span class="reps-tag">3 组 x 15 次</span>
     </div>
+    <ul class="tech-details">
+        <li><strong>重点：</strong> 肘关节微屈固定，半圆弧线压到大腿。</li>
+        <li><strong>感受：</strong> 彻底榨干背阔肌余力。</li>
+    </ul>
+</div>
 
-    <div class="footer">yjlnp041231 的私人训练手册 v2.0</div>
+<div class="footer">
+    yjlnp041231 的私人训练系统 v3.0 | 专注、控制、坚持
+</div>
+
 </body>
 </html>
