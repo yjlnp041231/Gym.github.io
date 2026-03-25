@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>篮球教案 L3：原地运球</title>
+    <style>
+        :root { --blue: #007AFF; --bg: #F2F7FF; --card: #FFFFFF; --text: #1C1C1E; --orange: #FF9500; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding-bottom: 30px; }
+        
+        .header { background: var(--orange); color: white; padding: 18px 15px; text-align: center; border-radius: 0 0 20px 20px; }
+        .header h1 { margin: 0; font-size: 20px; }
+        .header p { margin: 5px 0 0; font-size: 12px; opacity: 0.9; }
+
+        /* 计时器面板 */
+        .timer-panel { background: var(--card); margin: 15px; padding: 15px; border-radius: 16px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #E5E5EA; }
+        #display { font-size: 56px; font-weight: bold; color: var(--orange); font-family: monospace; margin: 5px 0; }
+        .btn-group { display: flex; gap: 8px; }
+        .btn { flex: 1; border: none; padding: 12px; border-radius: 10px; color: white; font-weight: bold; font-size: 14px; background: var(--orange); cursor: pointer; }
+
+        /* 教学环节 */
+        .stage-box { padding: 0 15px; }
+        .card { background: var(--card); margin-bottom: 12px; border-radius: 12px; padding: 15px; border-left: 5px solid var(--orange); position: relative; }
+        .stage-time { position: absolute; right: 15px; top: 15px; font-size: 11px; color: var(--orange); font-weight: bold; background: #FFF4E5; padding: 2px 8px; border-radius: 8px; }
+        .card-title { font-weight: bold; font-size: 16px; margin-bottom: 6px; color: #000; width: 75%; }
+        .card-content { font-size: 14px; line-height: 1.5; color: #3A3A3C; }
+        .card-content b { color: var(--orange); }
+        
+        /* 动作提示（纯文本排版，不乱码） */
+        .visual-tip { background: #FDF2E9; border-left: 3px solid var(--orange); padding: 10px; margin: 10px 0; font-size: 13px; color: #A0522D; }
+
+        .footer { text-align: center; font-size: 11px; color: #999; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>第3课：球性熟悉与原地运球</h1>
+    <p>1-2年级 (12人班) | 90分钟实战流程</p>
+</div>
+
+<div class="timer-panel">
+    <div style="font-size:12px; color:#999; font-weight:bold;">⏱️ 训练计时器</div>
+    <div id="display">00:00</div>
+    <div class="btn-group">
+        <button class="btn" onclick="run(30)">30s 极速拍球</button>
+        <button class="btn" onclick="run(60)">60s 耐力测评</button>
+        <button class="btn" style="background:#8E8E93" onclick="resetT()">复位</button>
+    </div>
+</div>
+
+<div class="stage-box">
+    <div class="card">
+        <span class="stage-time">0-15'</span>
+        <span class="card-title">1. 热身：影子模仿秀</span>
+        <div class="card-content">
+            学生每人一球，模仿教练动作（慢跑、高抬腿、侧滑步）。听到哨声原地<b>“抱球”</b>（强调安全，不准踢球）。
+        </div>
+    </div>
+
+    <div class="card">
+        <span class="stage-time">15-40'</span>
+        <span class="card-title">2. 球性：指尖传送带</span>
+        <div class="card-content">
+            - <b>指尖拨球：</b>双手举过头顶，用手指拨动篮球。<br>
+            - <b>身体绕环：</b>腰部绕环、膝部绕环。<br>
+            - <b>地面推球：</b>像滚雪球一样在地上推球转圈。
+        </div>
+        <div class="visual-tip">重点：用手指头“粘”球，而不是掌心拍球。</div>
+    </div>
+
+    <div class="card">
+        <span class="stage-time">40-70'</span>
+        <span class="card-title">3. 核心：原地运球初体验</span>
+        <div class="card-content">
+            - <b>姿势检查：</b>双脚开立，膝盖微屈，非运球手横向护球。<br>
+            - <b>高低切换：</b>听指令运“高球”（齐腰）和“低球”（齐膝）。<br>
+            - <b>12人分组：</b>2人一组，一人运球，一人数数。
+        </div>
+    </div>
+
+    <div class="card">
+        <span class="stage-time">70-80'</span>
+        <span class="card-title">4. 游戏：蚂蚁搬家赛</span>
+        <div class="card-content">
+            12人分两组。起点运球到终点，将球放入圆圈，跑回击掌。<b>球掉了回起点</b>。比哪组搬得快。
+        </div>
+    </div>
+
+    <div class="card" style="border-left-color: #4CD964;">
+        <span class="stage-time">80-90'</span>
+        <span class="card-title">5. 拉伸与总结</span>
+        <div class="card-content">
+            - <b>拉伸：</b>手臂牵拉、腿部内侧拉伸。<br>
+            - <b>总结：</b>评选今天的“运球小马达”，强调回家练习 1 分钟。
+        </div>
+    </div>
+</div>
+
+<div class="footer">yjlnp041231 · 篮球教学系统</div>
+
+<script>
+    let t = null;
+    function run(s) {
+        clearInterval(t);
+        let left = s;
+        update(left);
+        t = setInterval(() => {
+            left--; update(left);
+            if (left <= 0) {
+                clearInterval(t);
+                alert("⏰ 训练结束！");
+            }
+        }, 1000);
+    }
+    function resetT() { clearInterval(t); update(0); }
+    function update(s) {
+        let m = Math.floor(s/60);
+        let sec = s%60;
+        document.getElementById('display').innerText = (m<10?'0':'')+m+":"+(sec<10?'0':'')+sec;
+    }
+</script>
+
+</body>
+</html>
