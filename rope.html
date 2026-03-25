@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>第3课：小小飞人跳绳大作战</title>
+    <style>
+        :root { --main: #27ae60; --timer: #e74c3c; --bg: #f0f2f5; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); color: #333; margin: 0; padding-bottom: 80px; }
+        
+        /* 顶部课程状态 */
+        .status-header { background: var(--main); color: white; padding: 20px 15px; text-align: center; border-radius: 0 0 20px 20px; }
+        .progress-text { font-size: 12px; opacity: 0.8; text-transform: uppercase; }
+        
+        /* 90分钟大时钟 */
+        .big-clock { background: white; margin: -20px 20px 20px; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+        .time-val { font-size: 42px; font-weight: bold; color: var(--timer); font-family: 'Courier New', Courier, monospace; }
+        .control-btns { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+        .btn { border: none; padding: 10px 18px; border-radius: 20px; color: white; font-weight: bold; font-size: 14px; }
+
+        /* 90分钟教学大纲 */
+        .lesson-node { background: white; margin: 15px; border-radius: 12px; overflow: hidden; border-left: 6px solid var(--main); }
+        .node-head { background: #eafaf1; padding: 10px 15px; display: flex; justify-content: space-between; font-weight: bold; }
+        .node-body { padding: 15px; font-size: 14px; line-height: 1.6; color: #555; }
+        .node-img { width: 100%; height: auto; display: block; background: #eee; }
+
+        /* 1-2年级专属口诀 */
+        .chant { background: #fff9c4; margin: 15px; padding: 15px; border-radius: 10px; border: 1px dashed #fbc02d; font-size: 15px; }
+        .chant b { color: #f57f17; display: block; margin-bottom: 5px; }
+
+        .footer { position: fixed; bottom: 0; width: 100%; background: white; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #ddd; }
+        .footer-btn { color: #7f8c8d; text-decoration: none; font-size: 12px; text-align: center; }
+        .active { color: var(--main); }
+    </style>
+</head>
+<body>
+
+<div class="status-header">
+    <div class="progress-text">课程进度：第 3 节 / 共 16 节</div>
+    <h1 style="margin:5px 0; font-size:20px;">主题：并脚跳与摇绳节奏</h1>
+</div>
+
+<div class="big-clock">
+    <div style="font-size:12px; color:#999;">课堂总计：90 分钟</div>
+    <div class="time-val" id="clock">90:00</div>
+    <div class="control-btns">
+        <button class="btn" style="background:#27ae60" onclick="startClock()">开始上课</button>
+        <button class="btn" style="background:#f39c12" onclick="quickTimer(60)">1分测验</button>
+        <button class="btn" style="background:#3498db" onclick="quickTimer(30)">30s冲刺</button>
+    </div>
+</div>
+
+<div class="chant">
+    <b>📢 老师领读口诀：</b>
+    大手臂，夹腋下；小手腕，画圆圈；<br>轻落地，像小猫；并脚跳，顶呱呱！
+</div>
+
+<div class="lesson-node">
+    <div class="node-head"><span>1. 热身：躲避绳子游戏</span><span>15'</span></div>
+    <div class="node-body">
+        - <b>模仿跑：</b>学小猴跑、学恐龙走。<br>
+        - <b>摆绳：</b>绳子在地上摆成蛇形，练习跳跃避开。<br>
+        - <b>关节操：</b>重点活动手腕、脚踝。
+    </div>
+</div>
+
+<div class="lesson-node" style="border-left-color: #f39c12;">
+    <div class="node-head"><span>2. 核心：摇绳与配合</span><span>30'</span></div>
+    <img src="https://fitnessprogramer.com/wp-content/uploads/2021/04/Jump-Rope.gif" class="node-img">
+    <div class="node-body">
+        - <b>听音找节奏：</b>老师击掌，学生跟着节奏“原地空跳”。<br>
+        - <b>左右摇绳：</b>单手握两头，在身体侧面画圆。<br>
+        - <b>纠错：</b>强调不要“抡大臂”。
+    </div>
+</div>
+
+<div class="lesson-node" style="border-left-color: #e74c3c;">
+    <div class="node-head"><span>3. 竞赛：挑战地雷阵</span><span>30'</span></div>
+    <div class="node-body">
+        - <b>个人战：</b>30秒不间断跳挑战。<br>
+        - <b>双人赛：</b>一人跳，伙伴数数（培养合作意识）。<br>
+        - <b>终极挑战：</b>低空长绳通过。
+    </div>
+</div>
+
+<div class="lesson-node" style="border-left-color: #9b59b6;">
+    <div class="node-head"><span>4. 放松与点评</span><span>15'</span></div>
+    <div class="node-body">
+        - <b>拉伸：</b>“变成长颈鹿”伸展身体。<br>
+        - <b>表扬：</b>颁发今日“节奏王”勋章。<br>
+        - <b>作业：</b>回味口诀，每天跳50个。
+    </div>
+</div>
+
+<div class="footer">
+    <a href="index.html" class="footer-btn">💪 健身</a>
+    <a href="#" class="footer-btn active">🏫 教案</a>
+    <a href="#" class="footer-btn">📊 记录</a>
+</div>
+
+<script>
+    let timeLeft = 90 * 60;
+    let timer = null;
+    function startClock() {
+        if(timer) return;
+        timer = setInterval(() => {
+            timeLeft--;
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            document.getElementById('clock').innerText = (m<10?'0':'')+m + ":" + (s<10?'0':'')+s;
+            if(timeLeft <= 0) clearInterval(timer);
+        }, 1000);
+    }
+    function quickTimer(s) {
+        alert("准备开始 " + s + " 秒倒计时！");
+    }
+</script>
+
+</body>
+</html>
