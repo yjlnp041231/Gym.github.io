@@ -3,110 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>第3课：跳绳闯关大冒险</title>
+    <title>1-2年级跳绳体系教案</title>
     <style>
-        :root { --p: #2ecc71; --w: #f1c40f; --d: #e74c3c; --bg: #1a1a1a; --card: #2d2d2d; }
-        body { font-family: sans-serif; background: var(--bg); color: #eee; margin: 0; padding-bottom: 100px; }
-        .header { background: var(--p); color: white; padding: 20px; text-align: center; border-radius: 0 0 20px 20px; }
+        :root { --main: #ff6b00; --bg: #1a1a1a; --card: #262626; --txt: #ffffff; --sec: #888; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--txt); margin: 0; padding-bottom: 100px; }
         
-        /* 1. 永不失效的 SVG 动态演示 (纯代码生成) */
-        .demo-box { background: #000; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .svg-man { animation: bounce 0.6s infinite ease-in-out; }
-        .svg-rope { animation: rotateRope 0.6s infinite linear; transform-origin: 100px 75px; }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
-        @keyframes rotateRope { 0% { transform: rotateX(0deg); opacity: 1; } 50% { transform: rotateX(180deg); opacity: 0.3; } 100% { transform: rotateX(360deg); opacity: 1; } }
+        /* 顶部课程体系切换 */
+        .curriculum-nav { background: #000; padding: 15px; overflow-x: auto; white-space: nowrap; border-bottom: 1px solid #333; position: sticky; top: 0; z-index: 100; }
+        .lesson-tab { display: inline-block; padding: 8px 16px; margin-right: 10px; border-radius: 20px; background: #333; font-size: 13px; color: var(--sec); cursor: pointer; }
+        .lesson-tab.active { background: var(--main); color: white; font-weight: bold; }
 
-        /* 2. 计时器面板 */
-        .timer-panel { background: var(--card); margin: 15px; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #444; }
-        #display { font-size: 52px; font-weight: bold; color: var(--w); font-family: monospace; margin: 10px 0; }
-        .btn-group { display: flex; gap: 10px; }
-        .btn { flex: 1; border: none; padding: 12px; border-radius: 10px; color: white; font-weight: bold; }
+        /* 计时器面板 */
+        .timer-container { background: var(--card); margin: 20px; padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        #timer-display { font-size: 60px; font-weight: 800; color: var(--main); font-family: tabular-nums; margin: 10px 0; }
+        .btn-box { display: flex; gap: 10px; }
+        .btn-action { flex: 1; border: none; padding: 15px; border-radius: 10px; font-weight: bold; font-size: 14px; background: #333; color: white; }
+        .btn-active { background: var(--main); }
 
-        /* 3. 游戏化教案内容 */
-        .game-card { background: var(--card); margin: 15px; border-radius: 12px; overflow: hidden; border-left: 5px solid var(--p); }
-        .game-head { background: #333; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; }
-        .game-title { font-weight: bold; color: var(--p); font-size: 16px; }
-        .game-tag { font-size: 11px; background: var(--d); color: white; padding: 2px 6px; border-radius: 4px; }
-        .game-body { padding: 15px; font-size: 14px; line-height: 1.6; color: #ccc; }
-        .game-body b { color: var(--w); }
-        
-        .footer { position: fixed; bottom: 0; width: 100%; background: #111; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #333; }
-        .nav-item { color: #888; text-decoration: none; font-size: 12px; }
-        .active { color: var(--p); font-weight: bold; }
+        /* 动作指导（永不乱码的静态示意图） */
+        .svg-guide { background: #000; padding: 20px; text-align: center; }
+        .svg-guide svg { width: 150px; height: 150px; }
+
+        /* 教学环节 */
+        .task-list { padding: 0 20px; }
+        .task-item { background: var(--card); border-radius: 12px; padding: 20px; margin-bottom: 15px; position: relative; border-left: 4px solid var(--main); }
+        .task-tag { position: absolute; right: 15px; top: 15px; font-size: 12px; color: var(--main); opacity: 0.8; }
+        .task-h { font-size: 18px; font-weight: bold; margin-bottom: 8px; color: #fff; }
+        .task-p { font-size: 14px; color: var(--sec); line-height: 1.6; }
+        .game-tip { background: #332114; border-radius: 8px; padding: 12px; margin-top: 10px; border-left: 2px solid var(--main); font-size: 13px; color: #ffcc99; }
+
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h1>第3课：9人跳绳精英特训</h1>
-    <div style="font-size:12px; opacity:0.8; margin-top:5px;">难度：⭐⭐ | 趣味：⭐⭐⭐⭐⭐</div>
+<div class="curriculum-nav">
+    <div class="lesson-tab">L1</div><div class="lesson-tab">L2</div>
+    <div class="lesson-tab active">L3 (当前)</div>
+    <div class="lesson-tab">L4-6</div><div class="lesson-tab">L7-10</div><div class="lesson-tab">L11-15</div>
 </div>
 
-<div class="demo-box">
-    <svg width="200" height="150" viewBox="0 0 200 150">
-        <g class="svg-man">
-            <circle cx="100" cy="40" r="12" fill="#fff"/> <line x1="100" y1="52" x2="100" y2="90" stroke="#fff" stroke-width="4"/> <line x1="100" y1="60" x2="80" y2="80" stroke="#fff" stroke-width="3"/> <line x1="100" y1="60" x2="120" y2="80" stroke="#fff" stroke-width="3"/>
-            <line x1="100" y1="90" x2="90" y2="120" stroke="#fff" stroke-width="4"/> <line x1="100" y1="90" x2="110" y2="120" stroke="#fff" stroke-width="4"/>
-        </g>
-        <ellipse class="svg-rope" cx="100" cy="75" rx="50" ry="70" fill="none" stroke="#f1c40f" stroke-width="2" />
+<div class="timer-container">
+    <div style="font-size: 12px; color: var(--sec);">专业计时赛</div>
+    <div id="timer-display">00:00</div>
+    <div class="btn-box">
+        <button class="btn-action btn-active" onclick="runTimer(30)">30s 爆发</button>
+        <button class="btn-action btn-active" onclick="runTimer(60)">60s 耐力</button>
+        <button class="btn-action" onclick="resetTimer()">复位</button>
+    </div>
+</div>
+
+<div class="svg-guide">
+    <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="20" r="10" fill="#fff"/>
+        <path d="M50 30 L50 70 M30 50 L70 50 M40 90 L50 70 L60 90" stroke="#fff" stroke-width="4" fill="none"/>
+        <ellipse cx="50" cy="55" rx="35" ry="40" stroke="#ff6b00" stroke-width="2" fill="none" />
     </svg>
-    <div style="color:#666; font-size:11px;">[ 动态指令：手腕画小圆，并脚轻跳 ]</div>
+    <p style="font-size: 12px; color: var(--main);">第3课核心：手腕摇小圆 | 并脚轻落地</p>
 </div>
 
-<div class="timer-panel">
-    <div id="display">00:00</div>
-    <div class="btn-group">
-        <button class="btn" style="background:var(--w); color:#000;" onclick="run(30)">30s 冲刺</button>
-        <button class="btn" style="background:var(--p)" onclick="run(60)">60s 测评</button>
-        <button class="btn" style="background:#444" onclick="stopTimer()">重置</button>
+<div class="task-list">
+    <div class="task-item">
+        <span class="task-tag">15'</span>
+        <div class="task-h">1. 热身：揪尾巴大作战</div>
+        <div class="task-p">9人将绳子塞在腰后当尾巴。互相抓捕，锻炼高频变向跑和灵敏度。</div>
+        <div class="game-tip">老师提示：抓捕时保护好自己的“小尾巴”，不能推搡哦！</div>
+    </div>
+
+    <div class="task-item">
+        <span class="task-tag">30'</span>
+        <div class="task-h">2. 摇绳强化训练</div>
+        <div class="task-p">
+            - **听响摇绳：** 单手摇绳听拍地声（1秒1拍）。<br>
+            - **猫咪落地：** 并脚轻跳，全场要求无声落地。<br>
+            - **一对一：** 只有9个孩子，教练必须每人纠正一次手腕位置。
+        </div>
+    </div>
+
+    <div class="task-item">
+        <span class="task-tag">30'</span>
+        <div class="task-h">3. 趣味闯关：红绿灯</div>
+        <div class="task-p">全员行进间跳绳。绿灯跳，红灯踩绳立定。动了的退回起点。</div>
+        <div class="game-tip">目的：训练孩子对绳子的控制力及瞬间制动能力。</div>
+    </div>
+
+    <div class="task-item">
+        <span class="task-tag">15'</span>
+        <div class="task-h">4. 竞赛测评与勋章</div>
+        <div class="task-p">使用计时器进行30s挑战。记录每个人成绩。评选今天的“节奏之星”。</div>
     </div>
 </div>
 
-<div style="padding:0 15px; color:var(--p); font-size:14px; font-weight:bold;">闯关大冒险 (90分钟流程)</div>
-
-<div class="game-card">
-    <div class="game-head"><span class="game-title">关卡 1：救救小尾巴</span><span class="game-tag">热身 15'</span></div>
-    <div class="game-body">
-        <b>玩法：</b>9个孩子把绳子塞进裤腰后面当“尾巴”。在规定区域内，互相去揪别人的尾巴，同时保护自己的尾巴不被揪掉。<br>
-        <b>目的：</b>通过高频变向跑，充分活动脚踝和全身。
-    </div>
-</div>
-
-<div class="game-card" style="border-left-color: var(--w);">
-    <div class="game-head"><span class="game-title">关卡 2：听响不听跳</span><span class="time-tag">技能 30'</span></div>
-    <div class="game-body">
-        <b>核心训练：</b><br>
-        1. <b>摇拨浪鼓：</b>单手握两柄，在侧面摇，听绳子打地的“啪嗒”声。要求声音节奏要稳。<br>
-        2. <b>猫咪落地：</b>并脚跳。教练要求跳地时不能发出“咚咚”声，必须像猫一样无声。<br>
-        3. <b>人少优势：</b>9个人站一排，教练挨个纠正手腕动作。
-    </div>
-</div>
-
-<div class="game-card" style="border-left-color: var(--d);">
-    <div class="game-head"><span class="game-title">关卡 3：红绿灯大逃杀</span><span class="time-tag">趣味 25'</span></div>
-    <div class="game-body">
-        <b>玩法：</b>全员在起跑线跳绳前进。教练背对大家喊“绿灯”，全员边跳边走；喊“红灯”，全员立刻停止且绳子要过脚掌踩住。<br>
-        <b>惩罚：</b>动了或绳子没踩稳的，回起点重来。看谁先到终点！
-    </div>
-</div>
-
-<div class="game-card" style="border-left-color: #9b59b6;">
-    <div class="game-head"><span class="game-title">关卡 4：巅峰对决</span><span class="time-tag">竞赛 20'</span></div>
-    <div class="game-body">
-        <b>测评：</b>使用上方 60s 按钮。9个人分三组。A组跳，B组数数，C组当裁判检查动作（手腕有没有动）。三轮轮换。<br>
-        <b>结束：</b>评选出“尾巴之王”和“红绿灯之神”。
-    </div>
-</div>
-
-<div class="footer">
-    <a href="index.html" class="nav-item">💪 健身</a>
-    <a href="rope.html" class="nav-item active">🏫 教案</a>
-    <a href="#" class="nav-item">📊 数据记录</a>
+<div class="bottom-nav">
+    <div style="color:var(--main); font-weight:bold;">📋 教案</div>
+    <div style="color:var(--sec);">📊 成绩</div>
 </div>
 
 <script>
     let t = null;
-    function run(s) {
+    function runTimer(s) {
         clearInterval(t);
         let time = s;
         update(time);
@@ -115,15 +110,15 @@
             update(time);
             if (time <= 0) {
                 clearInterval(t);
-                alert("⏰ 时间到！吹哨！");
+                alert("⏰ 比赛结束！");
             }
         }, 1000);
     }
-    function stopTimer() { clearInterval(t); update(0); }
+    function resetTimer() { clearInterval(t); update(0); }
     function update(s) {
-        let m = Math.floor(s / 60);
-        let sec = s % 60;
-        document.getElementById('display').innerText = (m<10?'0':'')+m+":"+(sec<10?'0':'')+sec;
+        let m = Math.floor(s/60);
+        let sec = s%60;
+        document.getElementById('timer-display').innerText = (m<10?'0':'')+m+":"+(sec<10?'0':'')+sec;
     }
 </script>
 
